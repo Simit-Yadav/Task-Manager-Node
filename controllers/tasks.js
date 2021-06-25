@@ -2,8 +2,10 @@ const task = require("../modals/task");
 const getAllTasks = async (req, res) => {
   try {
     const tasks = await task.find({});
+    console.log(tasks);
     res.status(200).json({ tasks });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ msg: error });
   }
 };
